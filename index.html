@@ -41,16 +41,22 @@ button{font-family:var(--jp)}
 /* ================= HERO ================= */
 .hero{position:relative;background:var(--red);color:#fff;overflow:hidden;padding:calc(26px + env(safe-area-inset-top)) 0 26px}
 .hero .yr{
-  position:absolute;top:10px;right:6px;writing-mode:vertical-rl;text-orientation:upright;
-  font-family:var(--num);font-size:clamp(58px,17vw,110px);line-height:.95;letter-spacing:.02em;
-  color:rgba(255,255,255,.12);pointer-events:none;user-select:none;
+  position:absolute;top:0;bottom:0;right:4px;margin:0;
+  display:flex;align-items:center;
+  writing-mode:vertical-rl;text-orientation:upright;
+  font-family:var(--num);font-size:clamp(46px,13.5vw,84px);line-height:1.02;letter-spacing:-.02em;
+  color:rgba(255,255,255,.13);pointer-events:none;user-select:none;
 }
 .hero .in{position:relative;z-index:1}
 .tagline{font-family:var(--num);font-size:10px;letter-spacing:.3em;color:rgba(255,255,255,.85);margin-bottom:14px}
-.hero h1{font-weight:900;font-size:clamp(32px,10.2vw,46px);line-height:1.1;letter-spacing:.01em}
-.splat{position:relative;display:block;width:min(86%,320px);margin:10px 0;padding:9% 11%}
-.splat svg{position:absolute;inset:0;width:100%;height:100%;z-index:0;filter:drop-shadow(0 6px 16px rgba(0,0,0,.2))}
-.splat img{position:relative;z-index:1;width:100%}
+.hero h1{font-weight:900;font-size:clamp(32px,10.2vw,46px);line-height:1.04;letter-spacing:.01em}
+.splat{
+  display:flex;align-items:center;justify-content:center;
+  width:min(52%,186px);aspect-ratio:1;margin:2px 0;
+  background:#fff;border-radius:50%;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+}
+.splat img{width:74%}
 .hero .catch{margin-top:16px;display:inline-block;background:#fff;color:var(--red-d);font-weight:900;font-size:15px;letter-spacing:.08em;padding:8px 16px;border-radius:999px}
 .hero .meta{margin-top:18px;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px}
 .hero .d{font-family:var(--num);font-size:clamp(38px,11vw,54px);line-height:1}
@@ -59,14 +65,14 @@ button{font-family:var(--jp)}
 .hero .place{margin-top:10px;font-size:14.5px;color:rgba(255,255,255,.92);line-height:1.7}
 
 /* ================= PANELS ================= */
-main{background:#fff}
+main{background:var(--blue)}
 .panelw{padding:26px 0 56px;animation:up .4s cubic-bezier(.2,.75,.3,1)}
 @keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 [hidden]{display:none!important}
-.ttl{padding:6px 0 4px}
-.ttl .kick{font-family:var(--num);font-size:10px;letter-spacing:.2em;color:var(--red);margin-bottom:8px}
+.ttl{padding:10px 0 4px;color:#fff}
+.ttl .kick{font-family:var(--num);font-size:10px;letter-spacing:.2em;color:#BFE0EC;margin-bottom:8px}
 .ttl h2{font-weight:900;font-size:clamp(27px,8.2vw,38px);line-height:1.2}
-.ttl p{margin-top:12px;font-size:16px;line-height:1.9;color:var(--mute)}
+.ttl p{margin-top:12px;font-size:16px;line-height:1.9;color:#DCEDF4}
 
 /* blocks */
 .b{background:var(--cream);border-radius:var(--r);padding:22px 20px;margin-top:14px}
@@ -153,7 +159,7 @@ a.markl mark::after{content:" →";font-family:var(--num);font-size:.8em}
 
 .legophoto{border-radius:14px;margin-top:14px}
 .cap{margin-top:8px;font-size:13px;color:var(--mute)}
-.note{margin-top:14px;font-size:13.5px;color:var(--mute);line-height:1.85}
+.note{margin-top:14px;font-size:13.5px;color:#D3E7EF;line-height:1.85}
 .b .note{color:var(--mute)}
 
 /* ================= TOP TABS ================= */
@@ -217,21 +223,6 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--sun);outline-offset
     <p class="tagline">KASAOKA / OKAYAMA</p>
     <h1>カブトガニ
       <span class="splat">
-        <svg viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
-          <g fill="#fff">
-            <path d="M0 96c2-18 14-31 30-40 5-16 18-27 35-30 12-13 30-18 47-14 14-8 31-9 46-3 13-9 31-10 45-3 17-6 37-1 49 13 18 2 33 14 40 30 11 9 16 23 14 37 4 17-3 34-17 44-5 15-18 26-34 29-13 12-30 17-47 13-15 8-32 9-47 2-13 8-30 9-44 3-18 6-38 0-50-14-17-3-31-15-37-31-12-9-19-23-20-38z"/>
-            <ellipse cx="20" cy="26" rx="13" ry="11"/>
-            <circle cx="6" cy="58" r="6"/>
-            <ellipse cx="381" cy="40" rx="15" ry="12"/>
-            <circle cx="395" cy="74" r="6.5"/>
-            <ellipse cx="46" cy="180" rx="12" ry="10"/>
-            <circle cx="26" cy="194" r="5"/>
-            <ellipse cx="348" cy="176" rx="13" ry="11"/>
-            <circle cx="372" cy="192" r="5.5"/>
-            <circle cx="196" cy="7" r="6"/>
-            <circle cx="232" cy="195" r="6"/>
-          </g>
-        </svg>
         <img src="title-kankyo.webp" alt="環境" onerror="this.onerror=null;this.src='titlekankyo.webp'">
       </span>
       フェスティバル</h1>
