@@ -75,4 +75,636 @@ main{background:#fff}
 .b.sun{background:var(--sun);color:#4A3410}
 .b.leaf{background:var(--leaf);color:#12300C}
 .b.sky{background:var(--sky);color:#08303F}
-.b.coral{
+.b.coral{background:var(--coral);color:#4A1512}
+.b.red{background:var(--red);color:#fff}
+.b.dark{background:var(--blue-d);color:#fff}
+.b h3{font-weight:900;font-size:21px;line-height:1.4;letter-spacing:.01em}
+.b h4{font-weight:900;font-size:17.5px;line-height:1.5;margin-bottom:6px}
+.b p{font-size:16px;line-height:1.9}
+.b p+p{margin-top:12px}
+.b .sm{font-size:14px;color:var(--mute)}
+.b.sun .sm,.b.leaf .sm,.b.sky .sm,.b.coral .sm{color:inherit;opacity:.75}
+.b.red .sm,.b.dark .sm{color:rgba(255,255,255,.75)}
+.lbl{font-family:var(--num);font-size:10px;letter-spacing:.18em;color:var(--red);margin-bottom:10px}
+.b.red .lbl,.b.dark .lbl,.b.sky .lbl{color:rgba(255,255,255,.8)}
+
+mark{background:linear-gradient(transparent 56%,var(--sun) 56%);color:inherit;font-weight:900;padding:0 2px}
+a.markl{text-decoration:none;border-bottom:0}
+a.markl mark::after{content:" →";font-family:var(--num);font-size:.8em}
+
+/* key-value */
+.kv{margin-top:6px}
+.kv div{display:grid;grid-template-columns:76px 1fr;gap:10px;padding:9px 0}
+.kv div+div{border-top:1px dashed rgba(0,0,0,.14)}
+.kv dt{font-size:13.5px;color:var(--mute);padding-top:3px}
+.kv dd{font-size:16.5px;line-height:1.65}
+.kv dd small{display:block;font-size:13.5px;color:var(--mute);margin-top:2px}
+
+/* time rows */
+.rows{margin-top:4px}
+.rows li{display:grid;grid-template-columns:56px 1fr;gap:12px;padding:12px 0;align-items:start}
+.rows li+li{border-top:1px dashed rgba(0,0,0,.13)}
+.rows time{font-family:var(--num);font-size:13.5px;color:var(--red);padding-top:3px}
+.rows b{display:block;font-weight:700;font-size:16.5px;line-height:1.55}
+.rows span{display:block;font-size:14px;color:var(--mute);line-height:1.7;margin-top:2px}
+.rows li.q{opacity:.55;padding:7px 0}
+.rows li.q b{font-weight:400;font-size:14.5px}
+.b.dark .rows li+li,.b.red .rows li+li{border-top-color:rgba(255,255,255,.24)}
+.b.dark .rows time{color:var(--blue-l)}
+.b.dark .rows span{color:#B7D3DE}
+
+/* pills */
+.pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.pills li{background:rgba(255,255,255,.9);border-radius:999px;padding:7px 14px;font-weight:700;font-size:14.5px}
+.b.dark .pills li,.b.red .pills li{background:rgba(255,255,255,.16);color:#fff}
+.rounds{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.rounds li{background:#fff;border-radius:14px;padding:10px 13px;text-align:center;min-width:74px}
+.rounds li b{font-family:var(--num);font-size:16px;display:block}
+.rounds li span{font-size:11px;font-weight:700;color:var(--mute)}
+
+/* list */
+.ls li{padding:12px 0}
+.ls li+li{border-top:1px dashed rgba(0,0,0,.13)}
+.ls b{display:block;font-weight:900;font-size:17px}
+.ls span{display:block;font-size:14.5px;color:var(--mute);line-height:1.8;margin-top:2px}
+
+/* declaration */
+.decl{background:#fff;border-radius:18px;padding:22px 20px;margin-top:14px}
+.decl time{font-family:var(--num);font-size:14px;color:var(--red)}
+.decl h4{font-weight:900;font-size:24px;line-height:1.35;margin-top:6px}
+.decl p{font-size:15.5px;color:#3c4c53;margin-top:10px;line-height:1.9}
+.decl .np{display:flex;align-items:center;gap:12px;margin-top:14px}
+.decl .np img{width:46px;flex:none}
+.decl .np span{font-size:13px;color:var(--mute);line-height:1.6}
+
+/* buttons */
+.btn{display:block;position:relative;margin-top:12px;padding:20px 46px 20px 20px;border-radius:var(--r);text-decoration:none;background:var(--ink);color:#fff;width:100%;text-align:left;border:0;cursor:pointer}
+.btn b{display:block;font-weight:900;font-size:17.5px}
+.btn span{display:block;font-size:14px;color:#b6c6cd;margin-top:5px;line-height:1.75}
+.btn::after{content:"→";position:absolute;right:20px;top:50%;transform:translateY(-50%);font-family:var(--num);font-size:18px;color:var(--sun)}
+.btn.sky{background:var(--sky);color:#08303F}
+.btn.sky span{color:rgba(8,48,63,.75)}
+.btn.sky::after{color:#08303F}
+.btn.sun{background:var(--sun);color:#4A3410}
+.btn.sun span{color:rgba(74,52,16,.75)}
+.btn.sun::after{color:#4A3410}
+.btn.tel{text-align:center;padding:18px;font-family:var(--num);font-size:21px;background:var(--red)}
+.btn.tel::after{content:none}
+
+.legophoto{border-radius:14px;margin-top:14px}
+.cap{margin-top:8px;font-size:13px;color:var(--mute)}
+.note{margin-top:14px;font-size:13.5px;color:var(--mute);line-height:1.85}
+.b .note{color:var(--mute)}
+
+/* ================= TOP TABS ================= */
+.tabs{position:sticky;top:0;z-index:60;background:var(--ink)}
+.tabs .sc{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:0 6px}
+.tabs .sc::-webkit-scrollbar{display:none}
+.tabs button{
+  flex:none;background:transparent;border:0;color:#93A4AC;cursor:pointer;
+  font-weight:700;font-size:14.5px;letter-spacing:.02em;white-space:nowrap;
+  padding:13px 13px 11px;margin:7px 2px;border-radius:999px;
+}
+.tabs button small{display:block;font-family:var(--num);font-size:8.5px;letter-spacing:.14em;color:#5E7079;margin-top:2px}
+.tabs button[aria-selected="true"]{background:var(--sun);color:#4A3410}
+.tabs button[aria-selected="true"] small{color:rgba(74,52,16,.7)}
+
+/* modal 会場図 */
+.modal{position:fixed;inset:0;z-index:95;display:none;background:var(--blue-d);overflow-y:auto;-webkit-overflow-scrolling:touch}
+.modal.on{display:block}
+.modal .head{position:sticky;top:0;background:var(--blue-d);display:flex;align-items:center;justify-content:space-between;padding:calc(14px + env(safe-area-inset-top)) var(--pad) 14px;z-index:2}
+.modal .head b{color:#fff;font-weight:900;font-size:18px}
+.modal .head button{background:rgba(255,255,255,.14);border:0;color:#fff;border-radius:999px;width:38px;height:38px;font-size:19px;cursor:pointer}
+.modal .body{padding:0 var(--pad) 60px}
+.fl{background:var(--cream);border-radius:var(--r);padding:18px;margin-top:12px}
+.fl .no{font-family:var(--num);font-size:12px;color:var(--red);letter-spacing:.1em}
+.fl .grid{display:grid;gap:9px;margin-top:12px}
+.rm{border-radius:14px;padding:15px 14px;font-weight:900;font-size:16.5px;line-height:1.4}
+.rm small{display:block;font-weight:400;font-size:13px;margin-top:3px;opacity:.8}
+.rm.hall{background:var(--blue);color:#fff;padding:24px 16px;font-size:20px}
+.rm.a{background:var(--sky);color:#08303F}
+.rm.b{background:var(--sun);color:#4A3410}
+.rm.c{background:var(--leaf);color:#12300C}
+.rm.d{background:var(--coral);color:#4A1512}
+.rm.e{background:#fff}
+.g2{grid-template-columns:1fr 1fr}
+.foyerline{background:#fff;border-radius:14px;padding:14px;margin-top:9px}
+.foyerline li{font-size:15px;padding:7px 0}
+.foyerline li+li{border-top:1px dashed rgba(0,0,0,.13)}
+.foyerline li.h{font-weight:900;color:var(--blue)}
+
+footer{background:var(--blue-d);color:#A9C4CF;padding:34px 0 40px;font-size:14px}
+footer .fn{color:#fff;font-weight:900;font-size:19px;margin-bottom:8px}
+footer .logos{margin-top:16px}
+footer .logos img{height:40px;width:auto}
+footer .tbd{margin-top:16px;font-size:11.5px;color:#6D8C99;line-height:1.9}
+
+@media(min-width:760px){
+  :root{--pad:28px}
+  .limit{max-width:680px}
+  .hero h1{font-size:50px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+button:focus-visible,a:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <p class="yr" aria-hidden="true">2026</p>
+  <div class="pad limit in">
+    <p class="tagline">KASAOKA / OKAYAMA</p>
+    <h1>カブトガニ
+      <span class="splat">
+        <svg viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
+          <g fill="#fff">
+            <path d="M0 96c2-18 14-31 30-40 5-16 18-27 35-30 12-13 30-18 47-14 14-8 31-9 46-3 13-9 31-10 45-3 17-6 37-1 49 13 18 2 33 14 40 30 11 9 16 23 14 37 4 17-3 34-17 44-5 15-18 26-34 29-13 12-30 17-47 13-15 8-32 9-47 2-13 8-30 9-44 3-18 6-38 0-50-14-17-3-31-15-37-31-12-9-19-23-20-38z"/>
+            <ellipse cx="20" cy="26" rx="13" ry="11"/>
+            <circle cx="6" cy="58" r="6"/>
+            <ellipse cx="381" cy="40" rx="15" ry="12"/>
+            <circle cx="395" cy="74" r="6.5"/>
+            <ellipse cx="46" cy="180" rx="12" ry="10"/>
+            <circle cx="26" cy="194" r="5"/>
+            <ellipse cx="348" cy="176" rx="13" ry="11"/>
+            <circle cx="372" cy="192" r="5.5"/>
+            <circle cx="196" cy="7" r="6"/>
+            <circle cx="232" cy="195" r="6"/>
+          </g>
+        </svg>
+        <img src="title-kankyo.webp" alt="環境" onerror="this.onerror=null;this.src='titlekankyo.webp'">
+      </span>
+      フェスティバル</h1>
+    <p class="catch">作って・食べて・学ぼう</p>
+    <div class="meta">
+      <span class="d">11.15</span><span class="h">SUN 10:00–15:00</span>
+      <span class="free">入場無料</span>
+    </div>
+    <p class="place">HAGIHARAブルーシーホール（笠岡市民会館）<br>開場 9:00</p>
+  </div>
+</header>
+
+
+<nav class="tabs" id="tabs">
+  <div class="sc" role="tablist">
+    <button role="tab" aria-selected="true"  data-p="about">概要<small>ABOUT</small></button>
+    <button role="tab" aria-selected="false" data-p="schedule">全体スケジュール<small>SCHEDULE</small></button>
+    <button role="tab" aria-selected="false" data-p="hall">メインホール<small>MAIN HALL</small></button>
+    <button role="tab" aria-selected="false" data-p="try">体験<small>WORKSHOP</small></button>
+    <button role="tab" aria-selected="false" data-p="foyer">ホワイエ<small>FOYER</small></button>
+    <button role="tab" aria-selected="false" data-p="food">飲食<small>FOOD</small></button>
+    <button role="tab" aria-selected="false" data-p="access">会場・交通<small>ACCESS</small></button>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ 概要 ============ -->
+<section class="panelw" id="p-about">
+  <div class="pad limit">
+    <div class="ttl">
+      <p class="kick">ABOUT</p>
+      <h2>カブトガニを、<br>まちのまんなかに。</h2>
+    </div>
+
+    <div class="b">
+      <p>笠岡市は、長年まもってきたカブトガニをまちのシンボルにしています。環境のバロメーターとして、全国に発信します。</p>
+      <p>自然を守り、生きものが減るのを止めて、回復へ向かわせる。その「ネイチャーポジティブ」を、企業・市民・研究者・団体・行政がいっしょに進めるきっかけにする一日です。</p>
+      <p>そして12:45、メインホールで<a class="markl" href="#hall" data-go="hall"><mark>ネイチャーポジティブ宣言</mark></a>を読み上げます。カブトガニがいる4つのまちの市長が話し合った、そのすえの約束です。その場に居合わせてもらうことが、このフェスティバルのいちばんの願いです。</p>
+    </div>
+
+    <div class="b white">
+      <p class="lbl">INFORMATION</p>
+      <dl class="kv">
+        <div><dt>日時</dt><dd>2026年11月15日（日）10:00 – 15:00<small>開場 9:00</small></dd></div>
+        <div><dt>会場</dt><dd>HAGIHARAブルーシーホール<small>笠岡市民会館／岡山県笠岡市六番町1-10</small></dd></div>
+        <div><dt>入場</dt><dd>無料<small>出入り自由。途中から来ても大丈夫です</small></dd></div>
+        <div><dt>主催</dt><dd>笠岡市 市民生活部 環境課<small>共催・後援は確認中です</small></dd></div>
+      </dl>
+      <p class="note">★ 一部、事前予約や整理券がいります。</p>
+    </div>
+
+    <div class="b sky">
+      <h4>カブトガニ検定だけ 9:20 から</h4>
+      <p>レゴのワークショップだけ 15:40 まで。ほかはすべて10:00からです。</p>
+    </div>
+
+    <div class="b sand">
+      <p class="lbl">JOIN US</p>
+      <h4>出展する人たち</h4>
+      <p class="sm" style="margin-top:10px">自治体</p>
+      <ul class="pills"><li>西条市</li><li>伊万里市</li><li>杵築市</li><li>笠岡市</li></ul>
+      <p class="sm" style="margin-top:16px">事業所ほか</p>
+      <ul class="pills">
+        <li>萩原工業</li><li>生化学工業</li><li>エフピコ</li><li>天野産業</li>
+        <li>笠岡商業高校</li><li>ブルー・オーシャン事業</li><li>NP公認アンバサダー</li>
+        <li>カブトガニ博物館</li><li>中国電力</li><li>レゴ社</li>
+      </ul>
+    </div>
+
+    <a class="btn sun" href="https://www.city.kasaoka.okayama.jp/soshiki/18/73846.html" target="_blank" rel="noopener">
+      <b>カブトガニ環境応援団</b>
+      <span>団員証カードは全14種類。当日も配ります。5枚集めると博物館でプレミアム団員証と交換できます。</span>
+    </a>
+    <a class="btn sky" href="https://igenya1206-creator.github.io/kasaoka-project/" target="_blank" rel="noopener">
+      <b>カブトガニ未来創成プロジェクト</b>
+      <span>かさおかネイチャーポジティブ。笠岡の海と干潟でいま何が起きていて、これから何をするのか。</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ 全体スケジュール ============ -->
+<section class="panelw" id="p-schedule" hidden>
+  <div class="pad limit">
+    <div class="ttl">
+      <p class="kick">SCHEDULE</p>
+      <h2>全体スケジュール</h2>
+      <p>場所によって開いている時間がちがいます。まずここを見てください。</p>
+    </div>
+
+    <div class="b white">
+      <ul class="rows">
+        <li><time>9:00</time><div><b>開場</b><span>受付はピロティ</span></div></li>
+        <li><time>9:20</time><div><b>カブトガニ検定</b><span>3階 研修室／9:50まで</span></div></li>
+        <li><time>10:00</time><div><b>ぜんぶスタート</b><span>メインホール／ホワイエ／レゴ／中国電力／飲食／家庭ごみ相談</span></div></li>
+        <li><time>13:15</time><div><b>メインホール 終了</b></div></li>
+        <li><time>14:00</time><div><b>ホワイエ・飲食・中国電力 終了</b></div></li>
+        <li><time>15:00</time><div><b>フェスティバル終了</b></div></li>
+        <li class="q"><time>15:40</time><div><b>レゴ 最終回 終了</b></div></li>
+      </ul>
+    </div>
+
+    <div class="b sun">
+      <h4>15:00でフェスティバルは終了ですが、レゴブースに至っては15:40までお楽しみいただけます！</h4>
+      <p>最終回は15:00からの40分。ホールもマルシェも終わったあとの、いちばん静かな回です。</p>
+    </div>
+
+    <div class="b">
+      <p class="lbl">PLACE &amp; TIME</p>
+      <ul class="ls">
+        <li><b>メインホール</b><span>10:00 – 13:15／ステージ・サミット</span></li>
+        <li><b>ホワイエ</b><span>10:00 – 14:00／展示・物販</span></li>
+        <li><b>ピロティ</b><span>9:00 – 14:00／受付・家庭ごみ相談会</span></li>
+        <li><b>第1会議室</b><span>10:00 – 16:00／レゴ</span></li>
+        <li><b>第2会議室</b><span>10:00 – 14:00／中国電力ワークショップ</span></li>
+        <li><b>研修室（3階）</b><span>9:20 – 9:50／カブトガニ検定</span></li>
+        <li><b>東側駐車場</b><span>10:00 – 14:00／飲食ブース</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ メインホール ============ -->
+<section class="panelw" id="p-hall" hidden>
+  <div class="pad limit">
+    <div class="ttl">
+      <p class="kick">MAIN HALL</p>
+      <h2>メインホール<br>スケジュール</h2>
+      <p>10:00から13:15まで。こどもの発表から、市長たちの話し合い、そして宣言まで。出入り自由です。</p>
+    </div>
+
+    <div class="b white">
+      <ul class="rows">
+        <li><time>10:00</time><div><b>カブトガニクス</b></div></li>
+        <li><time>10:05</time><div><b>開会・趣旨説明</b></div></li>
+        <li><time>10:10</time><div><b>レゴのカブトガニで環境を考える</b><span>ワークショップ参加者によるプレゼン</span></div></li>
+        <li><time>10:25</time><div><b>開会のことば</b><span>栗尾市長</span></div></li>
+        <li><time>10:30</time><div><b>来賓あいさつ</b></div></li>
+        <li><time>10:50</time><div><b>神内小学校の活動発表</b><span>地元のこどもたちによる報告</span></div></li>
+        <li><time>11:10</time><div><b>NP公認アンバサダー発表</b></div></li>
+        <li class="q"><time>11:25</time><div><b>転換</b></div></li>
+        <li><time>11:30</time><div><b>環境省のお話</b><span>ほかのまちの事例紹介</span></div></li>
+      </ul>
+    </div>
+
+    <div class="b dark">
+      <p class="lbl">11:50 – 12:50 ／ HERE</p>
+      <h3>カブトガニがいるまちの市長が、笠岡にあつまります。</h3>
+      <ul class="pills"><li>西条市</li><li>伊万里市</li><li>杵築市</li><li>笠岡市</li></ul>
+      <p style="margin-top:14px;color:#CBE2EB;font-size:15.5px">それぞれのまちの保護の取り組みを持ちより、これからの海と干潟について話し合います。そのすえに、まちとしての約束をこの場で読み上げます。</p>
+      <ul class="rows" style="margin-top:14px">
+        <li><time>11:50</time><div><b>カブトガニ環境サミット</b><span>各市の取り組み報告／ネイチャーポジティブについてのディスカッション／生化学工業のプレゼンもこの中で</span></div></li>
+        <li><time>12:40</time><div><b>カブトガニ環境連携宣言</b><span>まちどうしで力を合わせる約束</span></div></li>
+      </ul>
+      <div class="decl">
+        <time>12:45</time>
+        <h4>ネイチャーポジティブ宣言</h4>
+        <p>この日でいちばん大事な5分間です。これからの自然のことを、ここで決めます。読み上げる文章は、当日までにこのページで公開します。</p>
+        <div class="np">
+          <img src="logo-nature-positive.webp" alt="" onerror="this.onerror=null;this.src='preview.webp'">
+          <span>宣言文は準備中です</span>
+        </div>
+      </div>
+      <ul class="rows" style="margin-top:14px">
+        <li><time>12:50</time><div><b>みんなでカブニくんを囲んで記念撮影</b><span>その場にいた人みんなで。この写真が、笠岡が宣言した日の記録になります</span></div></li>
+      </ul>
+    </div>
+
+    <div class="b white">
+      <ul class="rows">
+        <li><time>12:55</time><div><b>カブトガニ検定の結果発表</b><span>解説もあります</span></div></li>
+        <li><time>13:05</time><div><b>商品コンテストの結果発表</b><span>来場者の投票で決まります</span></div></li>
+        <li class="q"><time>13:15</time><div><b>終了</b></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 体験 ============ -->
+<section class="panelw" id="p-try" hidden>
+  <div class="pad limit">
+    <div class="ttl">
+      <p class="kick">WORKSHOP</p>
+      <h2>つくる、ためす。</h2>
+      <p>手を動かす催しは、会議室と研修室で。整理券がいるものがあります。</p>
+    </div>
+
+    <div class="b white">
+      <p class="lbl">LEGO</p>
+      <h3>レゴでカブトガニ</h3>
+      <p style="margin-top:8px">第1会議室／10:00 – 16:00。作ったカブトガニは、そのまま持って帰れます。</p>
+      <img class="legophoto" src="lego-kabutogani-small.webp" alt="レゴブロックで作られたカブトガニ" onerror="this.onerror=null;this.src='名称未設定のアートワーク.png'">
+      <p class="cap">出展：レゴ社</p>
+    </div>
+
+    <div class="b sky">
+      <h4>ビルディング　20名 × 3回</h4>
+      <p>レゴブロックでカブトガニを組み立てます。53ピース、長さ約11.5cm。まず笠岡市の職員から、カブトガニの生態や人工ふ化・放流の話を聞いてから作ります。</p>
+      <ul class="rounds">
+        <li><b>10:40</b><span>1回目</span></li><li><b>13:00</b><span>2回目</span></li><li><b>15:00</b><span>3回目</span></li>
+      </ul>
+      <p class="sm" style="margin-top:12px">小学生以上（1・2年生は保護者と一緒に）／各40分</p>
+    </div>
+
+    <div class="b leaf">
+      <h4>サイエンス　16名 × 2回</h4>
+      <p>カブトガニの幼生を安全に運ぶ方法を、レゴで作って、試して、改良します。実際に笠岡でやっている放流がテーマです。</p>
+      <ul class="rounds">
+        <li><b>11:40</b><span>1回目</span></li><li><b>14:00</b><span>2回目</span></li>
+      </ul>
+      <p class="sm" style="margin-top:12px">小中学生／4人1チーム／各40分</p>
+    </div>
+
+    <div class="b sun">
+      <h4>整理券は10:00から・先着順</h4>
+      <p>各回の整理券を、朝いちばんに配ります。作った作品は非売品。ここでしか手に入りません。</p>
+    </div>
+
+    <div class="b">
+      <ul class="ls">
+        <li><b>レゴプール</b><span>整理券が取れなくても遊べます。大きなブロックのプールが2つ。2歳から入れる未就学児のエリアと、小学生以上のエリアに分かれています</span></li>
+        <li><b>販売ブース</b><span>一般のレゴを買えるブースもあります</span></li>
+      </ul>
+      <p class="note">※ レゴの企画は調整中です。回数・定員・内容は変わることがあります。</p>
+    </div>
+
+    <div class="b white">
+      <p class="lbl">QUIZ</p>
+      <h3>カブトガニ検定</h3>
+      <p style="margin-top:8px">3階 研修室／9:20 – 9:50。この日でいちばん早く始まります。世界初？　朝一番の挑戦。結果発表と解説は12:55、メインホールで。</p>
+      <p class="note">※ 対象年齢・定員・申込方法は確認中です。</p>
+    </div>
+
+    <div class="b coral">
+      <h4>検定に出ると、博物館が無料に</h4>
+      <p>条件は「サミットに参加すること」と「検定またはワークショップに出ること」の両方です。サミットは11:50から。午前だけで帰ると条件を満たしません。</p>
+    </div>
+
+    <div class="b sand">
+      <ul class="ls">
+        <li><b>中国電力ワークショップ</b><span>第2会議室／10:00 – 14:00</span></li>
+        <li><b>NP公認アンバサダー ワークショップ</b><span>ホワイエ</span></li>
+        <li><b>家庭ごみ相談会</b><span>ピロティ／環境課の職員が、分別やごみの出し方の相談を受けます</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ホワイエ ============ -->
+<section class="panelw" id="p-foyer" hidden>
+  <div class="pad limit">
+    <div class="ttl">
+      <p class="kick">FOYER</p>
+      <h2>見て回る、<br>買って帰る。</h2>
+      <p>ホール前のホワイエが、まるごと展示と物販の場になります。10:00から14:00まで。</p>
+    </div>
+
+    <div class="b sun">
+      <h4>カブトガニ商品コンテスト</h4>
+      <p>どれが一番いいか、来場した人の投票で決まります。結果の発表は13:05、メインホールで。投票した人は、自分の1票がどうなったか見てから帰れます。</p>
+    </div>
+
+    <div class="b white">
+      <p class="lbl">SHOP</p>
+      <h4>買う</h4>
+      <ul class="ls" style="margin-top:8px">
+        <li><b>産業部ゾーン</b><span>カブトガニ関連商品／カブトガニ博物館グッズ／SIRUHA／モンベルTシャツ／サミット各市のグッズ</span></li>
+      </ul>
+    </div>
+
+    <div class="b">
+      <p class="lbl">EXHIBITION</p>
+      <h4>見る</h4>
+      <ul class="ls" style="margin-top:8px">
+        <li><b>萩原工業</b></li>
+        <li><b>生化学工業</b><span>カブトガニと医療のはなし</span></li>
+        <li><b>エフピコ</b><span>環境展示</span></li>
+        <li><b>天野産業</b></li>
+        <li><b>岡山県立笠岡商業高校</b><span>カブトガニの研究</span></li>
+        <li><b>高梁川流域瀬戸内海ブルー・オーシャン事業</b></li>
+        <li><b>フューチャーキッドタカラ</b><span>映像</span></li>
+        <li><b>カブトガニ博物館</b></li>
+      </ul>
+    </div>
+
+    <button class="btn" data-go="access">
+      <b>ブースのならび順</b>
+      <span>詳細は「会場・交通」をご覧ください。</span>
+    </button>
+
+    <a class="btn sun" href="https://www.city.kasaoka.okayama.jp/soshiki/18/73846.html" target="_blank" rel="noopener">
+      <b>カブトガニ環境応援団の団員証</b>
+      <span>全14種類。当日も配ります。5枚集めると博物館でプレミアム団員証と交換できます。</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ 飲食 ============ -->
+<section class="panelw" id="p-food" hidden>
+  <div class="pad limit">
+    <div class="ttl">
+      <p class="kick">FOOD</p>
+      <h2>おひるは、外で。</h2>
+      <p>東側駐車場（第1会議室の前）が飲食コーナーになります。10:00から14:00まで。</p>
+    </div>
+
+    <div class="b white">
+      <ul class="ls">
+        <li><b>キッチンカー</b><span>3台</span></li>
+        <li><b>大島バーガー</b></li>
+        <li><b>海産物</b><span>潮会</span></li>
+        <li><b>そのほかの出店</b></li>
+      </ul>
+    </div>
+
+    <div class="b sky">
+      <h4>食べる時間のおすすめ</h4>
+      <p>メインホールでは11:50からサミットが始まり、12:45に宣言、12:50に記念撮影があります。その前、11:00ごろまでに食べておくか、13:15にホールが終わってから食べるのがおすすめです。</p>
+    </div>
+
+    <div class="b">
+      <p class="note">※ 出店の内容は確認中です。変わることがあります。<br>※ 容器などのごみは、買ったお店にお返しください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 会場・交通 ============ -->
+<section class="panelw" id="p-access" hidden>
+  <div class="pad limit">
+    <div class="ttl">
+      <p class="kick">ACCESS</p>
+      <h2>行き方と、<br>会場のなか。</h2>
+    </div>
+
+    <button class="btn sky" id="openmap">
+      <b>会場図を開く</b>
+      <span>どの部屋で何をやっているか、フロアごとに見られます。</span>
+    </button>
+
+    <div class="b white">
+      <p class="lbl">HOW TO GET THERE</p>
+      <dl class="kv">
+        <div><dt>住所</dt><dd>岡山県笠岡市六番町1-10<small>HAGIHARAブルーシーホール（笠岡市民会館）</small></dd></div>
+        <div><dt>バス</dt><dd>笠岡駅から約8分<small>井笠バス 神島線／笠岡〜美の浜線</small></dd></div>
+        <div><dt>車</dt><dd>笠岡駅から約6分</dd></div>
+        <div><dt>徒歩</dt><dd>笠岡駅から約25分</dd></div>
+      </dl>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=HAGIHARA%E3%83%96%E3%83%AB%E3%83%BC%E3%82%B7%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%E7%AC%A0%E5%B2%A1%E5%B8%82%E6%B0%91%E4%BC%9A%E9%A4%A8" target="_blank" rel="noopener"><b>地図アプリでひらく</b></a>
+    </div>
+
+    <div class="b sand">
+      <p class="lbl">PARKING</p>
+      <h4>駐車場</h4>
+      <ul class="pills">
+        <li>会館 敷地内</li><li>中央小学校 グラウンド</li><li>笠岡運動公園（プール跡）</li><li>中国銀行 笠岡支店</li><li>創価学会 笠岡文化会館（東側）</li>
+      </ul>
+    </div>
+
+    <div class="b leaf">
+      <h4>シャトルバスが走ります</h4>
+      <p>中央小学校とHAGIHARAブルーシーホールのあいだを、9:20から16:00まで往復します。会館の駐車場が満車のときは、中央小学校へどうぞ。</p>
+    </div>
+
+    <div class="b white">
+      <p class="lbl">CONTACT</p>
+      <h3>お問い合わせ</h3>
+      <p style="margin-top:8px">笠岡市 市民生活部 環境課<br><span class="sm">岡山県笠岡市笠岡2369-14／平日 8:30 – 17:15</span></p>
+      <a class="btn tel" href="tel:0865-62-3805">0865-62-3805</a>
+      <p class="note">当日の会場（HAGIHARAブルーシーホール）の電話は 0865-63-5511 です。</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="pad limit">
+    <p class="fn">カブトガニ環境フェスティバル</p>
+    <p>2026年11月15日（日）10:00 – 15:00（開場9:00）／入場無料<br>HAGIHARAブルーシーホール（笠岡市民会館）</p>
+    <p style="margin-top:12px">主催：笠岡市 市民生活部 環境課／0865-62-3805</p>
+    <div class="logos"><img src="logo-nature-positive.webp" alt="ネイチャーポジティブ" onerror="this.onerror=null;this.src='preview.webp'"></div>
+    <p class="tbd">※このページは案の段階の情報を含みます。共催・後援、検定とワークショップの申込方法、定員、出店内容は確認中です。</p>
+  </div>
+</footer>
+
+<!-- ================= 会場図 ================= -->
+<div class="modal" id="map" role="dialog" aria-modal="true" aria-label="会場図">
+  <div class="head">
+    <b>会場図</b>
+    <button id="closemap" aria-label="閉じる">✕</button>
+  </div>
+  <div class="body pad limit">
+    <div class="fl">
+      <p class="no">OUTSIDE ／ 東側駐車場</p>
+      <div class="grid">
+        <div class="rm d">飲食ブース<small>キッチンカー3台・大島バーガー・海産物／10:00–14:00</small></div>
+      </div>
+    </div>
+
+    <div class="fl">
+      <p class="no">1F</p>
+      <div class="grid">
+        <div class="rm hall">メインホール<small>ステージ・カブトガニ環境サミット／10:00–13:15</small></div>
+        <div class="rm e">ホワイエ<small>展示・物販・商品コンテスト／10:00–14:00</small></div>
+        <ul class="foyerline">
+          <li>産業部ゾーン（物販・商品コンテスト）</li>
+          <li>フューチャーキッドタカラ 映像</li>
+          <li>岡山県立笠岡商業高校</li>
+          <li>NP公認アンバサダー ワークショップ</li>
+          <li>エフピコ</li>
+          <li>生化学工業</li>
+          <li>萩原工業</li>
+          <li>カブトガニ博物館</li>
+          <li class="h">↓ メインホール入り口</li>
+        </ul>
+        <div class="grid g2">
+          <div class="rm a">第1会議室<small>レゴ／10:00–16:00</small></div>
+          <div class="rm b">ピロティ<small>受付・家庭ごみ相談会</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fl">
+      <p class="no">2F</p>
+      <div class="grid">
+        <div class="rm c">第2会議室<small>中国電力ワークショップ／10:00–14:00</small></div>
+      </div>
+    </div>
+
+    <div class="fl">
+      <p class="no">3F</p>
+      <div class="grid">
+        <div class="rm b">研修室<small>カブトガニ検定／9:20–9:50</small></div>
+      </div>
+    </div>
+
+    <p class="note" style="margin-top:16px">※ ホワイエのならび順は、階段側から順に並べています。配置は変わることがあります。</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var PANELS=['about','schedule','hall','try','foyer','food','access'];
+  var tabs=document.getElementById('tabs'),btns=tabs.querySelectorAll('button');
+
+  function show(name,scroll){
+    if(PANELS.indexOf(name)<0)name='about';
+    PANELS.forEach(function(p){document.getElementById('p-'+p).hidden=(p!==name)});
+    btns.forEach(function(b){
+      var on=b.dataset.p===name;
+      b.setAttribute('aria-selected',on?'true':'false');
+      if(on)b.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
+    });
+    history.replaceState(null,'','#'+name);
+    if(scroll){
+      var y=tabs.getBoundingClientRect().top+window.scrollY;
+      if(window.scrollY>y)window.scrollTo({top:y,behavior:'smooth'});
+    }
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.p,true)})});
+  document.querySelectorAll('[data-go]').forEach(function(el){
+    el.addEventListener('click',function(e){
+      e.preventDefault();show(el.dataset.go,false);window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+
+  var map=document.getElementById('map');
+  document.getElementById('openmap').addEventListener('click',function(){map.classList.add('on');document.body.style.overflow='hidden'});
+  document.getElementById('closemap').addEventListener('click',function(){map.classList.remove('on');document.body.style.overflow=''});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){map.classList.remove('on');document.body.style.overflow=''}});
+
+  show(location.hash.replace('#','')||'about',false);
+})();
+</script>
+</body>
+</html>
