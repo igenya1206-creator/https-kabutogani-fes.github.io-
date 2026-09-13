@@ -55,8 +55,8 @@ button{font-family:var(--jp)}
 }
 /* 白いカブトガニのシルエット（甲羅の中央に「環境」が重なる） */
 .hero .crab{
-  position:absolute;left:50%;top:3%;transform:translateX(-50%);
-  width:78%;max-width:520px;opacity:.19;
+  position:absolute;left:50%;top:2%;transform:translateX(-50%);
+  height:94%;width:auto;max-width:96%;opacity:.19;
   pointer-events:none;user-select:none;z-index:1;
 }
 /* 青帯（右から左へ浅く下がる斜めの切り口） */
@@ -68,12 +68,12 @@ button{font-family:var(--jp)}
 /* 白シルエットと同じ位置・同じ大きさの赤版を重ね、青帯の中だけ見せる
    → 尾剣が青帯に差し掛かる部分だけ赤く変わる */
 .hero .crab-red{
-  position:absolute;left:50%;top:3%;transform:translateX(-50%);
-  width:78%;max-width:520px;opacity:.9;
+  position:absolute;left:50%;top:2%;transform:translateX(-50%);
+  height:94%;width:auto;max-width:96%;opacity:.9;
   -webkit-clip-path:var(--cut);clip-path:var(--cut);
   z-index:3;pointer-events:none;user-select:none;
 }
-.hero .in{position:relative;z-index:4;padding-bottom:calc(26px + 10vw)}
+.hero .in{position:relative;z-index:4;padding-bottom:calc(28px + 17vw)}
 
 .hero .yr{
   font-family:var(--num);font-size:11px;letter-spacing:.34em;
@@ -86,12 +86,17 @@ button{font-family:var(--jp)}
 }
 /* 「環境」ロゴ。台は使わない。文字の形に沿った白縁、ぼかしなし */
 .hero h1 .kankyo{
-  display:block;width:min(62vw,250px);margin:4px 0 2px;
+  display:block;width:min(64vw,260px);height:auto;
+  margin:-1.5% 0 -3%;              /* 画像に含まれる余白ぶんを詰める */
+}
+/* 白縁が必要になったときだけ、このクラスを .kankyo に足す。
+   ※ 背景が完全な透明でない画像に使うと、矩形の枠とギザつきが出ます */
+.hero h1 .kankyo.edge{
   filter:
-    drop-shadow(5px 0 0 #fff) drop-shadow(-5px 0 0 #fff)
-    drop-shadow(0 5px 0 #fff) drop-shadow(0 -5px 0 #fff)
-    drop-shadow(3.5px 3.5px 0 #fff) drop-shadow(-3.5px 3.5px 0 #fff)
-    drop-shadow(3.5px -3.5px 0 #fff) drop-shadow(-3.5px -3.5px 0 #fff);
+    drop-shadow(4px 0 0 #fff) drop-shadow(-4px 0 0 #fff)
+    drop-shadow(0 4px 0 #fff) drop-shadow(0 -4px 0 #fff)
+    drop-shadow(2.8px 2.8px 0 #fff) drop-shadow(-2.8px 2.8px 0 #fff)
+    drop-shadow(2.8px -2.8px 0 #fff) drop-shadow(-2.8px -2.8px 0 #fff);
 }
 .hero .d{
   display:block;font-family:var(--num);
@@ -106,9 +111,9 @@ button{font-family:var(--jp)}
 .hero .place{margin-top:12px;font-size:14.5px;color:rgba(255,255,255,.93);line-height:1.75}
 .hero .tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px}
 .hero .tags li{
-  background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.55);
-  color:#fff;font-weight:900;font-size:13px;letter-spacing:.06em;
-  padding:7px 15px;border-radius:999px;
+  background:#fff;color:var(--red-d);
+  font-weight:900;font-size:13.5px;letter-spacing:.06em;
+  padding:8px 16px;border-radius:999px;
 }
 .hero .tags li.act{background:var(--sun);border-color:var(--sun);color:#4A3410}
 
@@ -201,26 +206,19 @@ a.markl mark::after{content:" →";font-family:var(--num);font-size:.8em}
 .ls span{display:block;font-size:14.5px;color:var(--mute);line-height:1.8;margin-top:2px}
 
 /* declaration */
-.decl{background:#fff;border-radius:18px;padding:22px 20px;margin-top:14px;position:relative;z-index:1}
+.decl{background:#fff;color:var(--ink);border-radius:18px;padding:22px 20px;margin-top:14px;position:relative;z-index:1}
 .decl time{font-family:var(--num);font-size:14px;color:var(--red)}
 .decl h4{font-weight:900;font-size:24px;line-height:1.35;margin-top:6px}
 .decl p{font-size:15.5px;color:#3c4c53;margin-top:10px;line-height:1.9}
 .decl .np{display:flex;align-items:center;gap:12px;margin-top:14px}
 .decl .np span{font-size:13px;color:var(--mute);line-height:1.6}
 
-/* ネイチャーポジティブのロゴ：置かれた場所の色に合わせて単色にする
-   （マスクで塗りつぶすので、元画像が透過webpであることが前提）      */
-.npmark{display:block;flex:none;width:46px;aspect-ratio:1;
-  -webkit-mask:url("logo-nature-positive.webp") center/contain no-repeat;
-          mask:url("logo-nature-positive.webp") center/contain no-repeat;
-  background:currentColor;}
-.npmark.red{background:var(--red-d)}
-.npmark.blue{background:var(--blue-d)}
-.npmark.sun{background:var(--sun-o)}     /* 黄の上は同系のもっと濃い色 */
-.npmark.white{background:#fff}
-/* お問い合わせ欄だけ原色のまま。白い円の中に入れる */
+/* ネイチャーポジティブのロゴ。
+   単色化（メモ4章）は元ロゴの透過データが要るため保留。いまは原色のまま、
+   白い円に入れて置く。どの背景色の上でも同じ見え方になる。 */
 .npfull{width:62px;height:62px;flex:none;background:#fff;border-radius:50%;
   display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(0,0,0,.10)}
+.npfull.sm2{width:48px;height:48px}
 .npfull img{width:74%}
 
 /* buttons ／ 矢印＝尾剣 */
@@ -299,15 +297,18 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--sun);outline-offset
 
 <!-- ================= HERO ================= -->
 <header class="hero">
-  <img class="crab" src="crab-white.webp" alt="" aria-hidden="true">
+  <img class="crab" src="crab.webp" alt="" aria-hidden="true"
+       onerror="this.onerror=null;this.style.display='none'">
   <div class="band" aria-hidden="true"></div>
-  <img class="crab-red" src="crab-red.webp" alt="" aria-hidden="true">
+  <img class="crab-red" src="crab_red.webp" alt="" aria-hidden="true"
+       onerror="this.onerror=null;this.style.display='none'">
 
   <div class="pad limit in">
     <p class="yr">2026 KASAOKA</p>
     <h1>
       <span>カブトガニ</span>
-      <img class="kankyo" src="title-kankyo.webp" alt="環境" onerror="this.onerror=null;this.src='titlekankyo.webp'">
+      <img class="kankyo" src="kankyo.webp" alt="環境"
+           onerror="this.onerror=null;this.src='title-kankyo.webp'">
       <span>フェスティバル</span>
     </h1>
     <span class="d">11.15</span>
@@ -464,7 +465,8 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--sun);outline-offset
     </div>
 
     <div class="b red">
-      <img class="bgcrab" src="crab-white.webp" alt="" aria-hidden="true">
+      <img class="bgcrab" src="crab.webp" alt="" aria-hidden="true"
+           onerror="this.onerror=null;this.style.display='none'">
       <p class="lbl">11:50 – 12:50 ／ HERE</p>
       <h3>カブトガニがいるまちの市長が、笠岡にあつまります。</h3>
       <ul class="pills"><li>西条市</li><li>伊万里市</li><li>杵築市</li><li>笠岡市</li></ul>
@@ -478,7 +480,7 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--sun);outline-offset
         <h4>ネイチャーポジティブ宣言</h4>
         <p>この日でいちばん大事な5分間です。これからの自然のことを、ここで決めます。読み上げる文章は、当日までにこのページで公開します。</p>
         <div class="np">
-          <span class="npmark red" role="img" aria-label="かさおかネイチャーポジティブ"></span>
+          <span class="npfull sm2"><img src="logo-nature-positive.webp" alt="かさおかネイチャーポジティブ"></span>
           <span>宣言文は準備中です</span>
         </div>
       </div>
@@ -713,7 +715,7 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--sun);outline-offset
     <p class="fn">カブトガニ環境フェスティバル</p>
     <p>2026年11月15日（日）10:00 – 15:00（開場9:00）／入場無料<br>HAGIHARAブルーシーホール（笠岡市民会館）</p>
     <p style="margin-top:12px">主催：笠岡市 市民生活部 環境課／0865-62-3805</p>
-    <div class="logos"><span class="npmark white" style="width:40px" role="img" aria-label="かさおかネイチャーポジティブ"></span></div>
+    <div class="logos"><span class="npfull sm2"><img src="logo-nature-positive.webp" alt="かさおかネイチャーポジティブ"></span></div>
     <p class="tbd">※このページは案の段階の情報を含みます。共催・後援、検定とワークショップの申込方法、定員、出店内容は確認中です。</p>
   </div>
 </footer>
